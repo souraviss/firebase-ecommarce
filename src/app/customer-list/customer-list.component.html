@@ -1,3 +1,22 @@
-<p>
-  customer-list works!
-</p>
+<table class="table table-sm">
+<thead>
+  <th>FullName</th>
+  <th>Email</th>
+  <th>Phone</th>
+  <th></th>
+</thead>
+<ng-container *ngFor="let item of customerArray">
+<tr class="table-dark">
+<td>{{item.fullName}}</td>
+<td>{{item.email}}</td>
+<td>{{item.mobile}}</td>
+<td>
+  <button class="btn btn-outline-info" (click)="customerService.populateCustomer(item)">Edit</button>
+  <button class="btn btn-outline-danger" (click)="onDelete(item.$key)">Delete</button>
+</td>
+</tr>
+</ng-container>
+</table>
+<div class="alert alert-primary" *ngIf="showDeleteMessage">
+  Delete Successfully
+</div>
