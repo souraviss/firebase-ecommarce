@@ -1,18 +1,14 @@
 <table class="table table-sm">
 <thead>
-  <th>FullName</th>
-  <th>Email</th>
-  <th>Phone</th>
+  <th>Category Name</th>
   <th></th>
 </thead>
-<ng-container *ngFor="let item of customerArray">
+<ng-container *ngFor="let item of categoryArray">
 <tr class="table-dark">
-<td>{{item.fullName}}</td>
-<td>{{item.email}}</td>
-<td>{{item.mobile}}</td>
+<td>{{item.categoryName}}</td>
 <td>
-  <button class="btn btn-outline-info" (click)="customerService.populateCustomer(item)">Edit</button>
-  <button class="btn btn-outline-danger" (click)="onDelete(item.$key)">Delete</button>
+  <button class="btn btn-outline-info" (click)="customerService.populateCategory(item)">Edit</button>
+  <button class="btn btn-outline-danger" (click)="onDelete(item.Id)">Delete</button>
 </td>
 </tr>
 </ng-container>
